@@ -1,0 +1,14 @@
+In the recursive function fib we introduced in lecture to compute the Fibonacci numbers, how many times is fib(2) called when fib(5) is called? Explain your reasoning or write code that shows how you got your answer.
+
+SOLUTION:
+
+count=0
+def fib(n):
+    global count
+    if n==0 or n==1:
+        return 1
+    elif n==2:
+        count=count+1
+    else:
+        fib(n-1)+fib(n-2) 
+    return count
