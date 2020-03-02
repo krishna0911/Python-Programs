@@ -1,0 +1,18 @@
+def riemann_xsquared(n):
+    interval=1/n
+    sum=0.0
+    k=0
+    a=[]
+    a.append(0)
+    if n!=10:
+        for i in range (0,n):
+            sum=sum+(k*k*interval)
+            k=k+interval
+    else:
+        for i in range (1,n+1):
+            value=round(a[i-1]+interval,2)
+            a.append(value)
+        for i in range (0,n):
+            x=a[i]
+            sum=sum+(x*x*interval)
+    return sum  
