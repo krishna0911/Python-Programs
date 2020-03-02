@@ -1,0 +1,14 @@
+Write a recursive function that takes returns the sum of all non-negative integers up to  𝑛.
+
+SOLUTION:
+
+def triangular(n):
+    if n<=0:
+        return 0
+    else:
+        return (n+triangular(n-1))
+        
+        
+    """Takes in an integer n and returns the nth triangular number.
+    For n<=0 return 0."""
+
