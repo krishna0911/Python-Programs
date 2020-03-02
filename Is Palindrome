@@ -1,0 +1,26 @@
+Complete the isPal function below that takes in a string and returns True if the entered string is a palindrome and False otherwise. Punctuation marks, blank spaces, and capitalization are ignored, by virtue of the sub-function toChar(s). Recall that a palindrome is a string that is the same whether it is read forwards or backwards. Your code should return true if it is given the string 'Was it a cat, I saw?'
+
+SOLUTION:
+
+def isPalindrome(s): 
+    
+    def toChars(s): 
+        s = s.lower() 
+        letters = '' 
+        for c in s:
+            if c in 'abcdefghijklmnopqrstuvwxyz': 
+                letters = letters + c
+        return letters  
+    count=0
+    a=[]
+    b=[]
+    def isPal(s):
+        for i  in range(0,len(s)):
+            a.append(s[i])
+        b=a[::-1]
+        if(a==b):
+            return True
+        else:
+            return False
+    return isPal(toChars(s))
+
