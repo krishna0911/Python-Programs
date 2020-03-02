@@ -1,0 +1,25 @@
+In this problem we want to find the root of a function, such as  𝑔(𝑥)=𝑥3−4𝑥+1 in the interval  [1,2], by writing a function my_root(h,left,right) that takes in a function  ℎ, and an interval [left,right] that contains the root you're trying to find. The output should be the number of guesses required to find the approximate root, as well as the root.
+For example, when we run my_root(g,1,2) our output should be
+Number of Guesses is  5
+1.859375  is close to the root of the given function.
+
+SOLUTION:
+
+def g(x):
+    return x**3-4*x+1
+def my_root(h,left,right):
+    epsilon=.01
+    numGuesses=0
+    lim1 = left
+    lim2 = right
+    numGuesses = 0
+    ans= (lim1+lim2)/2.0
+    while abs(g(ans) - 0) >epsilon:
+        numGuesses += 1
+        if g(ans) < 0:
+            lim1 = ans
+        else:
+            lim2 = ans
+        ans = (lim1+lim2)/2.0
+    print("Number of Guesses is ",numGuesses)
+    print(ans," is close to the root of the given function")    
