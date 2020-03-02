@@ -1,0 +1,17 @@
+Write a function that takes in a string and an integer  𝑛 and prints the string with only the first  𝑛 letters capitalized.
+
+SOLUTION:
+def upperCASE(x, n):
+    a=[]
+    b=[]
+    k=''
+    for i in range(0,len(x)):
+        a.append(x[i])        
+    for i in range(0,n):
+        b.append(a[i].upper())
+    for i in range(n,len(a)):
+        b.append(a[i])
+    for i in b:
+        k=k+i
+    return k    
+    #raise NotImplementedError()
