@@ -1,0 +1,11 @@
+Write a program that calculates  𝑛!! recursively. As a reminder, this is defined iteratively as
+𝑛!!=𝑛∗(𝑛−2)∗(𝑛−4)∗...Make sure your program handles even and odd cases.
+
+SOLUTION:
+def nDoubleFactorial(n):
+    fact=1
+    if n==1 or n==0:
+        return 1
+    else:
+        return (n*nDoubleFactorial(n-2))
+    #raise NotImplementedError()
