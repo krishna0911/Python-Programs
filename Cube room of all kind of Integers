@@ -1,0 +1,36 @@
+Using the code from the lecture that computes the approximate square root of a number using bisection search, complete the function my_cube_root(x) below, which takes in a real number x and computes its approximate cube root with tolerance .01. Make sure you use conditionals to return 0 if x=0 and also make sure it handles negative numbers.
+
+
+Solution:
+
+def my_cube_root(x):
+    epsilon = 0.01
+    left = 0
+    right = x
+    numGuesses = 0
+    if (type(x)==float):
+        epsilon=0.01
+        left=0
+        right=max(x,1)
+        guess = (right+left)/2.0
+        while abs(guess**3 - x) > epsilon:
+            numGuesses += 1
+            if guess**3 < x:
+                left = guess
+            else:
+                right = guess
+            guess = (right+left)/2.0
+        
+    elif x<0:
+        x=x*(-1)
+        result=my_cube_root(x)
+        return result*-1   
+    guess = (right+left)/2.0
+    while abs(guess**3 - x) > epsilon:
+        numGuesses += 1
+        if guess**3 < x:
+            left = guess
+        else:
+            right = guess
+        guess = (right+left)/2.0
+    return guess     
