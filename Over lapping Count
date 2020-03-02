@@ -1,0 +1,14 @@
+Create a program that takes in a list of lists of length 2 called intervals, where we interpret each entry in intervals as a closed interval [a,b] with a<b, and a single point and outputs how many of the intervals the point is in.
+
+SOLUTON:
+
+def count_overlapping(intervals, point):
+    """takes in a list of intervals and a float point and returns an int counting how many of the intervals in the list contain point.
+    N.B. intervals is a list of lists of length 2, where each sub-list represents a closed interval [a,b] with a<b,
+    and point is a float."""
+    count=0
+    l=len(intervals)
+    for i in range (0,l):
+        if intervals[i][0]<=point and intervals[i][1]>=point:
+            count=count+1
+    return count 
