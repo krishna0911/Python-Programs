@@ -1,0 +1,23 @@
+Write a Python function draw(n) that constructs the following pattern using the print function and a nested for loop. Here is what the output should look like for  𝑛=5
+n = 5 , but with less space between lines.
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+
+SOLUTION:
+def draw(n):
+    for i in range (0,n):
+        for j in range (0,i+1):
+            print('*',end="")
+        print()   
+    for i in range (n,0,-1):
+        for j in range(1,i):
+            print('*',end="")
+        print() 
+draw(5)
