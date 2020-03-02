@@ -1,0 +1,15 @@
+We can generalize the Fibonacci sequence 0,1,1,2,3,5,8..., to start with any pair of integers 0,n,m,n+m,(n + m) + m,.... Implement gen_Fib(n,m,k) recursively so that it returns the kth element of the generalized Fibonacci sequence.
+
+SOLUTION:
+
+def gen_Fib(n,m,k):
+    """Takes in 3 integers n, m, k and 
+    returns the kth element of the generalized Fibonacci sequence 
+    that starts as ...0,n,m,n+m, n+2m,"""
+    if k==1:
+        return n
+    elif k==2:
+        return m 
+        
+    else:
+        return gen_Fib(n,m,k-1)+gen_Fib(n,m,k-2)
